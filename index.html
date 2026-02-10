@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Pour Kressy ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(120deg, #4b0f1a, #7a1f2b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Georgia', serif;
+      color: #f5eaea;
+      text-align: center;
+    }
+
+    #container {
+      max-width: 600px;
+      padding: 40px;
+    }
+
+    #text {
+      font-size: 1.5em;
+      line-height: 1.6;
+      min-height: 220px;
+    }
+
+    .heart {
+      margin-top: 30px;
+      font-size: 2.2em;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="text"></div>
+    <div class="heart" id="heart">❤️</div>
+  </div>
+
+  <script>
+    const message = 
+`Kressy,
+
+Il y a des rencontres qui changent le rythme.
+Des regards qui restent.
+Des silences qui rassurent.
+
+Toi, tu es devenue une évidence.
+Une douceur dans le chaos.
+Un sourire que je cherche sans m’en rendre compte.
+
+Aujourd’hui, je voulais juste te le dire, veux-tu être ma valentine ?
+Bonne Saint-Valentin.
+Je t’aime mi esposa.`;
+
+    let index = 0;
+    const speed = 50;
+    const textDiv = document.getElementById("text");
+    const heart = document.getElementById("heart");
+
+    function typeWriter() {
+      if (index < message.length) {
+        textDiv.innerHTML += message.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+      } else {
+        heart.classList.add("show");
+      }
+    }
+
+    typeWriter();
+  </script>
+</body>
+</html>
